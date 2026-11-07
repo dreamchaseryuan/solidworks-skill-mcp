@@ -148,6 +148,8 @@ jobs:
       - name: Install frontend dependencies
         working-directory: apps/workbench-ui
         run: npm ci
+      - name: Install core packaging dependencies
+        run: python -m pip install -r requirements.txt -r mcp-server/requirements.txt
       - name: Configure updater signing key
         working-directory: apps/workbench-ui
         env:

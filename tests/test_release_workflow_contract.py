@@ -153,6 +153,8 @@ def test_desktop_aggregator_depends_on_all_optional_build_jobs():
     assert "if: always()" in block
     package = _joined(_jobs(DESKTOP_WORKFLOW)["package_build"])
     assert "build_windows_release.ps1" in package
+    assert "Install core packaging dependencies" in package
+    assert "python -m pip install -r requirements.txt -r mcp-server/requirements.txt" in package
     assert DESKTOP_BUILD_SCRIPT.is_file()
 
 
