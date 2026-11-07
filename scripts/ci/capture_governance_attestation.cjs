@@ -25,8 +25,8 @@ const os = require('node:os');
 const path = require('node:path');
 const lib = require('./governance_attestation.cjs');
 
-const TRUSTED_REPOSITORY = 'wzyn20051216/solidworks-automation-skill';
-const TRUSTED_REPOSITORY_ID = '1184045765';
+const TRUSTED_REPOSITORY = 'dreamchaseryuan/solidworks-skill-mcp';
+const TRUSTED_REPOSITORY_ID = '1449249326';
 const RULESET_NAME = 'protect-main';
 const DEFAULT_OUT = path.join('docs', 'architecture', 'evidence', 'governance-ruleset-attestation.json');
 const DEFAULT_KEY = path.join(os.homedir(), '.cad-governance', 'ed25519-private.pem');

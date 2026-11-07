@@ -2,7 +2,7 @@
 # 用于 zuoliangyu/micu-ai-lib 聚合展示。
 
 name: SolidWorks Automation Skill
-authors: [wzyn20051216, zuoliangyu]
+authors: [dreamchaseryuan]
 category: Tool
 tags: [SolidWorks, CAD, AutoCAD, Desktop, Tauri, React, MCP, Python, COM, Automation, VibeCAD, Subskills]
 status: in-progress
@@ -13,7 +13,7 @@ cover: assets/douyin-balance.jpg
 readme: README.md
 
 links:
-  github: https://github.com/wzyn20051216/solidworks-automation-skill
+  github: https://github.com/dreamchaseryuan/solidworks-skill-mcp
 
 subskills:
   - name: solidworks-vibecad

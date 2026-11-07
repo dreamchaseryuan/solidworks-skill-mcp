@@ -114,12 +114,12 @@ function valid(options = {}) {
     context: {
       repository: TRUSTED_REPOSITORY, repository_id: TRUSTED_REPOSITORY_ID, event_name: 'workflow_dispatch',
       ref: 'refs/heads/main', ref_type: 'branch', ref_protected: true, sha,
-      actor: 'wzyn20051216', triggering_actor: 'wzyn20051216',
+      actor: 'dreamchaseryuan', triggering_actor: 'dreamchaseryuan',
     },
     branch: { protected: true, commit: { sha } },
     rules: structuredClone(live.rules),
     rulesets: [live],
-    permissions: { wzyn20051216: 'admin' },
+    permissions: { dreamchaseryuan: 'admin' },
     environment: { id: 1, name: 'cad-validation', protection_rules: [],
       deployment_branch_policy: { protected_branches: true, custom_branch_policies: false } },
     runners: [{ status: 'online', busy: false, labels: ['self-hosted', 'Windows', 'CAD'].map(name => ({ name })) }],
@@ -205,7 +205,7 @@ test('非 main 的受保护分支不得通过：凭据链路只允许 main', () 
   const report = evaluatePolicy(valid({ snapshot: { context: {
     repository: TRUSTED_REPOSITORY, repository_id: TRUSTED_REPOSITORY_ID, event_name: 'workflow_dispatch',
     ref: 'refs/heads/release', ref_type: 'branch', ref_protected: true, sha: 'a'.repeat(40),
-    actor: 'wzyn20051216', triggering_actor: 'wzyn20051216' } } }));
+    actor: 'dreamchaseryuan', triggering_actor: 'dreamchaseryuan' } } }));
   assertBlocked(report, 'protected_ref_is_main');
 });
 
@@ -213,7 +213,7 @@ test('非受保护分支不得通过', () => {
   const report = evaluatePolicy(valid({ snapshot: { context: {
     repository: TRUSTED_REPOSITORY, repository_id: TRUSTED_REPOSITORY_ID, event_name: 'workflow_dispatch',
     ref: 'refs/heads/main', ref_type: 'branch', ref_protected: false, sha: 'a'.repeat(40),
-    actor: 'wzyn20051216', triggering_actor: 'wzyn20051216' } } }));
+    actor: 'dreamchaseryuan', triggering_actor: 'dreamchaseryuan' } } }));
   assertBlocked(report, 'manual_branch_only');
 });
 
@@ -645,14 +645,14 @@ test('Runner 缺少必需标签时阻断', () => {
 });
 
 test('触发者与重跑者都必须是 admin 或 maintain', () => {
-  assertBlocked(evaluatePolicy(valid({ snapshot: { permissions: { wzyn20051216: 'read' } } })),
+  assertBlocked(evaluatePolicy(valid({ snapshot: { permissions: { dreamchaseryuan: 'read' } } })),
     'authorized_actor_and_rerunner');
 });
 
 // ---------------------------------------------------------------- 故障注入矩阵
 
 const faults = {
-  'actor 权限降级': s => { s.permissions = { wzyn20051216: 'read' }; },
+  'actor 权限降级': s => { s.permissions = { dreamchaseryuan: 'read' }; },
   'Environment 缺失': s => { s.environment = null; },
   'Runner 离线': s => { s.runners = [{ status: 'offline', busy: false, labels: [] }]; },
   '仓库被替换': s => { s.context.repository = 'evil/fork'; },

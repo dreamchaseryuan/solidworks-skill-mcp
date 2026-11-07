@@ -18,11 +18,11 @@ long_description = (ROOT / "README.md").read_text(encoding="utf-8")
 setup(
     name="solidworks-automation",
     version="2.1.0",
-    author="wzyn20051216",
+    author="dreamchaseryuan",
     description="Python automation toolkit for SolidWorks API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/wzyn20051216/solidworks-automation-skill",
+    url="https://github.com/dreamchaseryuan/solidworks-skill-mcp",
     license="MIT",
     packages=["solidworks_automation"],
     package_dir={"solidworks_automation": "scripts"},

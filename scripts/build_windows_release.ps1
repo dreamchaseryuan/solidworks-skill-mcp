@@ -110,7 +110,7 @@ $latest = [ordered]@{
     platforms = [ordered]@{
         "windows-x86_64" = [ordered]@{
             signature = (Get-Content -LiteralPath $signaturePath -Raw).Trim()
-            url = "https://github.com/wzyn20051216/solidworks-automation-skill/releases/download/v$Version/CAD-Studio-$Version-Setup-x64.exe"
+            url = "https://github.com/dreamchaseryuan/solidworks-skill-mcp/releases/download/v$Version/CAD-Studio-$Version-Setup-x64.exe"
         }
     }
 }

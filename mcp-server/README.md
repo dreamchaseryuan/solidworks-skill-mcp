@@ -189,7 +189,7 @@ python .\scripts\build_smithery_mcpb.py `
   .\dist\solidworks-automation-skill-2.1.0.mcpb `
   .\dist\solidworks-automation-skill-2.1.0-smithery.mcpb
 smithery mcp publish .\dist\solidworks-automation-skill-2.1.0-smithery.mcpb `
-  -n wzyn20051216/solidworks-automation-skill
+  -n dreamchaseryuan/solidworks-skill-mcp
 ```
 
 仓库发布流程也会自动生成这两个 MCPB 附件。`.mcpbignore` 保留工程图运行时依赖的

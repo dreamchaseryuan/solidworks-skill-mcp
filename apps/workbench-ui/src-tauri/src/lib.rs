@@ -2357,7 +2357,7 @@ fn validate_external_download_url(value: &str) -> Result<(), String> {
         "https://developers.openai.com/",
         "https://docs.anthropic.com/",
         "https://github.com/google-gemini/",
-        "https://github.com/wzyn20051216/solidworks-automation-skill/releases/",
+        "https://github.com/dreamchaseryuan/solidworks-skill-mcp/releases/",
         "https://opencode.ai/",
         "https://www.calculix.de/",
         "https://www.solidworks.com/",
@@ -3621,7 +3621,7 @@ mod tests {
         .is_ok());
         assert!(validate_external_download_url("http://www.python.org/downloads/").is_err());
         assert!(validate_external_download_url(
-            "https://github.com/wzyn20051216/solidworks-automation-skill/releases/latest"
+            "https://github.com/dreamchaseryuan/solidworks-skill-mcp/releases/latest"
         )
         .is_ok());
         assert!(

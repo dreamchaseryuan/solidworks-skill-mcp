@@ -2,9 +2,9 @@
 name = "cad-studio"
 version = "2.1.0"
 description = "面向机械工程的本地多 Agent CAD 自动化工作台"
-authors = ["wzyn20051216"]
+authors = ["dreamchaseryuan"]
 license = "MIT"
-repository = "https://github.com/wzyn20051216/solidworks-automation-skill"
+repository = "https://github.com/dreamchaseryuan/solidworks-skill-mcp"
 edition = "2021"
 rust-version = "1.77.2"
 

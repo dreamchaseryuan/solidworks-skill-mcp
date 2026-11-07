@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { updateDownloadProgress, type UpdateProgress } from "../domain/updateProgress";
 import { isTauriRuntime } from "../persistence";
 
-const RELEASES_URL = "https://github.com/wzyn20051216/solidworks-automation-skill/releases/latest";
+const RELEASES_URL = "https://github.com/dreamchaseryuan/solidworks-skill-mcp/releases/latest";
 
 type UpdateStatus = "idle" | "checking" | "current" | "available" | "downloading" | "installing" | "error";
 

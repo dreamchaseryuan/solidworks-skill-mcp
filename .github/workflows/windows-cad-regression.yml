@@ -52,7 +52,7 @@ jobs:
     # 先在托管机只读核验；Environment 不存在或保护不足时不分配自托管 Runner。
     if: >-
       github.event_name == 'workflow_dispatch' &&
-      github.repository == 'wzyn20051216/solidworks-automation-skill' &&
+      github.repository == 'dreamchaseryuan/solidworks-skill-mcp' &&
       github.ref_type == 'branch' && github.ref_protected
     runs-on: ubuntu-24.04
     timeout-minutes: 5

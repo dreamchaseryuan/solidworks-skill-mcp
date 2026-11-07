@@ -7,16 +7,16 @@
   "description": "Local Windows MCP server for controlled SolidWorks, CAD Studio, DFM, routing, FEA, and open-format CAD automation.",
   "long_description": "SolidWorks Automation Skill exposes a local stdio MCP server and a companion Agent Skill for Windows desktop CAD workflows. It provides guarded SolidWorks COM tools for parts, assemblies, drawings, exports, reviews, mates, holes, Motion Study checks, and batch delivery, plus headless CAD Studio tools for open-format generation, DFM checks, routing review, FEA preparation, and geometry preflight. Native SolidWorks tools require a local licensed SolidWorks installation; headless open-format tools can run without SolidWorks where their Python dependencies are available.",
   "author": {
-    "name": "wzyn20051216",
-    "url": "https://github.com/wzyn20051216"
+    "name": "dreamchaseryuan",
+    "url": "https://github.com/dreamchaseryuan"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wzyn20051216/solidworks-automation-skill"
+    "url": "https://github.com/dreamchaseryuan/solidworks-skill-mcp"
   },
-  "homepage": "https://github.com/wzyn20051216/solidworks-automation-skill#readme",
-  "documentation": "https://github.com/wzyn20051216/solidworks-automation-skill/blob/main/mcp-server/README.md",
-  "support": "https://github.com/wzyn20051216/solidworks-automation-skill/issues",
+  "homepage": "https://github.com/dreamchaseryuan/solidworks-skill-mcp#readme",
+  "documentation": "https://github.com/dreamchaseryuan/solidworks-skill-mcp/blob/main/mcp-server/README.md",
+  "support": "https://github.com/dreamchaseryuan/solidworks-skill-mcp/issues",
   "server": {
     "type": "python",
     "entry_point": "mcp-server/server.py",

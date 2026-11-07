@@ -17,7 +17,7 @@ const path = require('path');
 const { execFileSync, spawnSync } = require('child_process');
 
 const SKILL_NAME = 'solidworks-automation';
-const REPO_URL = 'https://github.com/wzyn20051216/solidworks-automation-skill.git';
+const REPO_URL = 'https://github.com/dreamchaseryuan/solidworks-skill-mcp.git';
 const MIN_NODE_MAJOR = 20;
 const OFFICIAL_PYPI_INDEX = 'https://pypi.org/simple';
 

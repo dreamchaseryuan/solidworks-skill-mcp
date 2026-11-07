@@ -3,8 +3,8 @@ const fs = require('node:fs');
 const lib = require('./governance_attestation.cjs');
 const { TRUSTED_KEYS: DEFAULT_TRUST_ROOT } = require('./governance_trust_root.cjs');
 
-const TRUSTED_REPOSITORY = 'wzyn20051216/solidworks-automation-skill';
-const TRUSTED_REPOSITORY_ID = '1184045765';
+const TRUSTED_REPOSITORY = 'dreamchaseryuan/solidworks-skill-mcp';
+const TRUSTED_REPOSITORY_ID = '1449249326';
 const ENVIRONMENT = 'cad-validation';
 /** @brief 允许合并前必须通过的既有状态检查；改名需同步 ruleset。 */
 const REQUIRED_CHECK = lib.REQUIRED_CHECK;

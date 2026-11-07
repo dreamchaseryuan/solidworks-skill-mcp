@@ -1,4 +1,4 @@
-# SolidWorks Automation Skill
+# SolidWorks Skill + MCP
 
 **AI Skill + MCP toolkit for reliable desktop CAD automation.**
 
@@ -14,10 +14,10 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![GitHub Release](https://img.shields.io/github/v/release/wzyn20051216/solidworks-automation-skill)](https://github.com/wzyn20051216/solidworks-automation-skill/releases)
-[![GitHub Stars](https://img.shields.io/github/stars/wzyn20051216/solidworks-automation-skill?style=flat)](https://github.com/wzyn20051216/solidworks-automation-skill)
+[![GitHub Release](https://img.shields.io/github/v/release/dreamchaseryuan/solidworks-skill-mcp)](https://github.com/dreamchaseryuan/solidworks-skill-mcp/releases)
+[![GitHub Stars](https://img.shields.io/github/stars/dreamchaseryuan/solidworks-skill-mcp?style=flat)](https://github.com/dreamchaseryuan/solidworks-skill-mcp)
 [![MCP](https://img.shields.io/badge/MCP-stdio--server-blue)](mcp-server/README.md)
-[![Skill + MCP CI](https://github.com/wzyn20051216/solidworks-automation-skill/actions/workflows/skill-mcp-release.yml/badge.svg)](https://github.com/wzyn20051216/solidworks-automation-skill/actions/workflows/skill-mcp-release.yml)
+[![Skill + MCP CI](https://github.com/dreamchaseryuan/solidworks-skill-mcp/actions/workflows/skill-mcp-release.yml/badge.svg)](https://github.com/dreamchaseryuan/solidworks-skill-mcp/actions/workflows/skill-mcp-release.yml)
 
 ```text
 User → Agent (Codex / Claude / Cursor) → Skill / MCP → Execution Core → CAD → Artifacts + Evidence
@@ -82,7 +82,7 @@ python scripts/sw_capability_probe.py  # 类型库与能力清单
 ### Option 1 — Skill
 
 ```powershell
-npx github:wzyn20051216/solidworks-automation-skill --target claude
+npx github:dreamchaseryuan/solidworks-skill-mcp --target claude
 ```
 
 该命令获取本仓库并执行根目录的 `install.js`（`package.json` 的 `bin` 入口）。
@@ -112,12 +112,12 @@ npx github:wzyn20051216/solidworks-automation-skill --target claude
 
 ### Option 2 — MCP
 
-支持 MCP Bundle 的客户端可直接从 [GitHub Releases](https://github.com/wzyn20051216/solidworks-automation-skill/releases) 导入
+支持 MCP Bundle 的客户端可直接从 [GitHub Releases](https://github.com/dreamchaseryuan/solidworks-skill-mcp/releases) 导入
 `SolidWorks-Automation-Skill-2.1.0.mcpb`；该包同时提供标准版与 Smithery 版。
 
 ```powershell
-git clone https://github.com/wzyn20051216/solidworks-automation-skill.git
-cd solidworks-automation-skill
+git clone https://github.com/dreamchaseryuan/solidworks-skill-mcp.git
+cd solidworks-skill-mcp
 python -m pip install -r requirements.txt -r mcp-server/requirements.txt
 node mcp-server/register_all_ai_mcp.js --help          # 查看全部参数
 node mcp-server/register_all_ai_mcp.js --clients codex,claude-code,cursor
@@ -127,7 +127,7 @@ node mcp-server/register_all_ai_mcp.js --clients codex,claude-code,cursor
 
 ### Option 3 — Optional CAD Studio Desktop
 
-从 [GitHub Releases](https://github.com/wzyn20051216/solidworks-automation-skill/releases) 下载 Windows 安装包。
+从 [GitHub Releases](https://github.com/dreamchaseryuan/solidworks-skill-mcp/releases) 下载 Windows 安装包。
 
 桌面端启动本地执行器时，如果 Windows 没有可用的 Python 3.10+，会尝试通过 winget 为当前用户安装 Python 3.12；无法安装时显示错误。环境诊断仍只读。SolidWorks 必须由用户另行安装并具备许可；API 查证所需的 7-Zip、Python 包和可验证的本地 API Help 按需自动配置，详情见 [`references/api-lookup.md`](references/api-lookup.md)。
 
@@ -330,18 +330,18 @@ Artifacts + Evidence
 
 ## License & Community
 
-[MIT](LICENSE) · [Code of Conduct](CODE_OF_CONDUCT.md) · [GitHub Issues](https://github.com/wzyn20051216/solidworks-automation-skill/issues) · [Star History](https://star-history.com/#wzyn20051216/solidworks-automation-skill&Date)
+[MIT](LICENSE) · [Code of Conduct](CODE_OF_CONDUCT.md) · [GitHub Issues](https://github.com/dreamchaseryuan/solidworks-skill-mcp/issues) · [Star History](https://star-history.com/#dreamchaseryuan/solidworks-skill-mcp&Date)
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=wzyn20051216/solidworks-automation-skill&amp;type=Date&amp;theme=dark">
-  <img src="https://api.star-history.com/svg?repos=wzyn20051216/solidworks-automation-skill&amp;type=Date" alt="SolidWorks Automation Skill 星标趋势" width="960">
+  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=dreamchaseryuan/solidworks-skill-mcp&amp;type=Date&amp;theme=dark">
+  <img src="https://api.star-history.com/svg?repos=dreamchaseryuan/solidworks-skill-mcp&amp;type=Date" alt="SolidWorks Skill + MCP 星标趋势" width="960">
 </picture>
 
 ---
 
 ## English
 
-**SolidWorks Automation Skill** is an AI Skill + MCP toolkit for reliable desktop CAD automation. Codex, Claude, Cursor, and other agents drive real SolidWorks / CAD workflows through natural language, with verification, deterministic recovery decisions, and execution tracing. **Skill and MCP are the primary products.** CAD Studio is an optional, independently versioned desktop GUI and does not block the core release.
+**SolidWorks Skill + MCP** is an AI Skill + MCP toolkit for reliable desktop CAD automation. Codex, Claude, Cursor, and other agents drive real SolidWorks / CAD workflows through natural language, with verification, deterministic recovery decisions, and execution tracing. **Skill and MCP are the primary products.** CAD Studio is an optional, independently versioned desktop GUI and does not block the core release.
 
 ---
 
