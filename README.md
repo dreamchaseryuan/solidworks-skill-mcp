@@ -127,7 +127,12 @@ node mcp-server/register_all_ai_mcp.js --clients codex,claude-code,cursor
 
 ### Option 3 — Optional CAD Studio Desktop
 
-从 [GitHub Releases](https://github.com/dreamchaseryuan/solidworks-skill-mcp/releases) 下载 Windows 安装包。
+从 [GitHub Releases](https://github.com/dreamchaseryuan/solidworks-skill-mcp/releases) 下载可选的 Windows 工作台附件：
+
+- **推荐**：`CAD-Studio-2.1.0-Windows-x64-Portable.zip`，解压后运行 `CAD Studio.exe`。
+- **安装版**：`CAD-Studio-2.1.0-Setup-x64.exe`。当前未配置 Authenticode 代码签名，Windows 可能显示 SmartScreen 提示。
+
+桌面工作台仍属于可选渠道；Skill 与 MCP 主产品不依赖这些桌面附件。
 
 桌面端启动本地执行器时，如果 Windows 没有可用的 Python 3.10+，会尝试通过 winget 为当前用户安装 Python 3.12；无法安装时显示错误。环境诊断仍只读。SolidWorks 必须由用户另行安装并具备许可；API 查证所需的 7-Zip、Python 包和可验证的本地 API Help 按需自动配置，详情见 [`references/api-lookup.md`](references/api-lookup.md)。
 
