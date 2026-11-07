@@ -134,6 +134,8 @@ node mcp-server/register_all_ai_mcp.js --clients codex,claude-code,cursor
 
 桌面工作台仍属于可选渠道；Skill 与 MCP 主产品不依赖这些桌面附件。
 
+当前桌面烟测已在 Windows 11 + SolidWorks 2026 SP0 完成真实零件创建、草图约束、拉伸和保存；正式目标仍为 SolidWorks 2026 SP1.1，需在对应 SP1.1 环境复验。
+
 桌面端启动本地执行器时，如果 Windows 没有可用的 Python 3.10+，会尝试通过 winget 为当前用户安装 Python 3.12；无法安装时显示错误。环境诊断仍只读。SolidWorks 必须由用户另行安装并具备许可；API 查证所需的 7-Zip、Python 包和可验证的本地 API Help 按需自动配置，详情见 [`references/api-lookup.md`](references/api-lookup.md)。
 
 > **Start with Skill or MCP. Install the desktop app only when you need a GUI.**
