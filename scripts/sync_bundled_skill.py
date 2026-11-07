@@ -45,6 +45,7 @@ SKIPPED_DIRECTORIES = {
     "release-output",
 }
 SKIPPED_DIRECTORY_PREFIXES = ("release-output",)
+SKIPPED_RELATIVE_PATHS = frozenset({"scripts/create_lotus.py"})
 SKIPPED_SUFFIXES = {".pyc", ".pyo"}
 
 
@@ -56,9 +57,12 @@ def _validate_target(root: Path, target: Path) -> None:
         raise ValueError(f"拒绝写入非预期内嵌 Skill 目录: {resolved_target}")
 
 
-def _is_runtime_file(path: Path, source_root: Path) -> bool:
+def _is_runtime_file(path: Path, source_root: Path, root: Path) -> bool:
     """@brief 排除缓存、构建产物和字节码，只保留可发布源文件。"""
     relative = path.relative_to(source_root)
+    repository_relative = path.relative_to(root).as_posix()
+    if repository_relative in SKIPPED_RELATIVE_PATHS:
+        return False
     generated_directory = any(
         part.casefold() in SKIPPED_DIRECTORIES
         or part.casefold().startswith(SKIPPED_DIRECTORY_PREFIXES)
@@ -80,7 +84,7 @@ def collect_runtime_files(root: Path) -> dict[Path, Path]:
         if not source_root.is_dir():
             raise FileNotFoundError(f"内嵌 Skill 源目录缺失: {source_root}")
         for source in source_root.rglob("*"):
-            if source.is_file() and _is_runtime_file(source, source_root):
+            if source.is_file() and _is_runtime_file(source, source_root, root):
                 files[source.relative_to(root)] = source
     return files
 

@@ -43,6 +43,17 @@ def test_collect_runtime_files_excludes_prefixed_release_output(tmp_path):
     assert Path("scripts/release-output-standalone/package.zip") not in files
 
 
+def test_collect_runtime_files_excludes_local_experiment_script(tmp_path):
+    root = tmp_path / "repo"
+    _create_minimal_source(root)
+    local_script = root / "scripts" / "create_lotus.py"
+    local_script.write_text("local experiment", encoding="utf-8")
+
+    files = collect_runtime_files(root)
+
+    assert Path("scripts/create_lotus.py") not in files
+
+
 def test_sync_bundled_skill_copies_sources_and_prunes_stale_file(tmp_path):
     """@brief 同步结果必须可复现，陈旧副本不能继续进入发布包。"""
     root = tmp_path / "repo"
