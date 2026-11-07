@@ -44,6 +44,7 @@ SKIPPED_DIRECTORIES = {
     "output",
     "release-output",
 }
+SKIPPED_DIRECTORY_PREFIXES = ("release-output",)
 SKIPPED_SUFFIXES = {".pyc", ".pyo"}
 
 
@@ -58,7 +59,12 @@ def _validate_target(root: Path, target: Path) -> None:
 def _is_runtime_file(path: Path, source_root: Path) -> bool:
     """@brief 排除缓存、构建产物和字节码，只保留可发布源文件。"""
     relative = path.relative_to(source_root)
-    return not any(part in SKIPPED_DIRECTORIES for part in relative.parts) and path.suffix.casefold() not in SKIPPED_SUFFIXES
+    generated_directory = any(
+        part.casefold() in SKIPPED_DIRECTORIES
+        or part.casefold().startswith(SKIPPED_DIRECTORY_PREFIXES)
+        for part in relative.parts
+    )
+    return not generated_directory and path.suffix.casefold() not in SKIPPED_SUFFIXES
 
 
 def collect_runtime_files(root: Path) -> dict[Path, Path]:

@@ -50,3 +50,11 @@ def test_mcpb_rejects_local_runtime_state(tmp_path: Path) -> None:
         bundle.writestr("config/runtime.local.json", "{}")
     with pytest.raises(ValueError, match="local or generated"):
         verify_mcpb(archive)
+
+
+def test_mcpb_rejects_prefixed_release_output(tmp_path: Path) -> None:
+    archive = _bundle(tmp_path / "release-output.mcpb")
+    with zipfile.ZipFile(archive, "a") as bundle:
+        bundle.writestr("release-output-standalone/package.zip", b"generated")
+    with pytest.raises(ValueError, match="local or generated"):
+        verify_mcpb(archive)

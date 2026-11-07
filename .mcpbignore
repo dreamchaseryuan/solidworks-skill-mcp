@@ -23,6 +23,6 @@ tests/
 apps/workbench-ui/
 apps/workbench-ui/**
 apps/desktop/preview_main_window.png
-release-output/
+release-output*/
 output/
 exports/

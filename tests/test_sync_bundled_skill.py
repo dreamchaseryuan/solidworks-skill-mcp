@@ -31,6 +31,18 @@ def test_collect_runtime_files_excludes_generated_files(tmp_path):
     assert Path("scripts/__pycache__/module.pyc") not in files
 
 
+def test_collect_runtime_files_excludes_prefixed_release_output(tmp_path):
+    root = tmp_path / "repo"
+    _create_minimal_source(root)
+    generated = root / "scripts" / "release-output-standalone" / "package.zip"
+    generated.parent.mkdir(parents=True)
+    generated.write_bytes(b"generated")
+
+    files = collect_runtime_files(root)
+
+    assert Path("scripts/release-output-standalone/package.zip") not in files
+
+
 def test_sync_bundled_skill_copies_sources_and_prunes_stale_file(tmp_path):
     """@brief 同步结果必须可复现，陈旧副本不能继续进入发布包。"""
     root = tmp_path / "repo"

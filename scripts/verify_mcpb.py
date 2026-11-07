@@ -24,6 +24,7 @@ REQUIRED_ENTRIES = (
 
 FORBIDDEN_SUFFIXES = (".log", ".pyc", ".pyo")
 FORBIDDEN_PARTS = {".git", ".venv", "__pycache__", "node_modules", "release-output"}
+FORBIDDEN_PREFIXES = ("release-output",)
 FORBIDDEN_PATHS = {"config/runtime.local.json"}
 
 
@@ -49,7 +50,8 @@ def verify_mcpb(path: Path, expected_version: str | None = None) -> dict[str, ob
         for name in names:
             normalized = name.replace("\\", "/")
             parts = set(normalized.split("/"))
-            if normalized in FORBIDDEN_PATHS or parts.intersection(FORBIDDEN_PARTS):
+            generated_part = any(part.casefold().startswith(FORBIDDEN_PREFIXES) for part in parts)
+            if normalized in FORBIDDEN_PATHS or parts.intersection(FORBIDDEN_PARTS) or generated_part:
                 forbidden.append(normalized)
             elif normalized.casefold().endswith(FORBIDDEN_SUFFIXES):
                 forbidden.append(normalized)
